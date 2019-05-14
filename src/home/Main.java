@@ -26,8 +26,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
         primaryStage.setTitle("");
         Image icon = new Image(getClass().getResourceAsStream("/home/image/icon.png"));primaryStage.getIcons().add(icon);
-        primaryStage.setScene(new Scene(root, 632.0, 570.0));
-        primaryStage.setResizable(false);
+        primaryStage.setScene(new Scene(root, 637.0, 649.0));
         primaryStage.setTitle("UETConnect");
         primaryStage.setOnCloseRequest( e -> {
             try {

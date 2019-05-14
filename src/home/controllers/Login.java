@@ -1,5 +1,6 @@
 package home.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import home.util.ConnectionUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +20,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 public class Login implements Initializable {
 
     protected static String info = "";
@@ -32,6 +34,8 @@ public class Login implements Initializable {
     protected PasswordField textPassword;
     @FXML
     protected AnchorPane anchorPane1;
+    @FXML
+    private JFXButton loginButton;
     boolean login = false;
     Stage dialogStage = new Stage();
 
@@ -107,7 +111,6 @@ public class Login implements Initializable {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
            stage.getIcons().add(new Image("/home/image/icon.png"));
-           stage.setResizable(false);
            stage.setTitle("UETConnect");
             stage.show();
         } catch (IOException e) {

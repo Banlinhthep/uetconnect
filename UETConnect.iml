@@ -5,13 +5,16 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/testing" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="joda-time-2.9.1" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.111" level="project" />
-    <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
-    <orderEntry type="library" name="com.calendarfx:view:8.4.2" level="project" />
-    <orderEntry type="library" name="jpedal-trial" level="project" />
+    <orderEntry type="library" exported="" name="joda-time-2.9.1" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.111" level="project" />
+    <orderEntry type="library" exported="" name="jfoenix-8.0.8" level="project" />
+    <orderEntry type="library" exported="" name="com.calendarfx:view:8.4.2" level="project" />
+    <orderEntry type="library" exported="" name="jpedal-trial" level="project" />
+    <orderEntry type="library" name="org.testfx:testfx-junit:4.0.6-alpha" level="project" />
+    <orderEntry type="library" name="org.loadui:testFx:3.1.2" level="project" />
   </component>
 </module>

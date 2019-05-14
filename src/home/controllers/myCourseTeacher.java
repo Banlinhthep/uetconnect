@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
@@ -54,6 +55,10 @@ public class myCourseTeacher implements Initializable {
     private String fileName = null;
 
     private static String classID;
+    private String strTea="";
+    public static String[] ListCoTea=new String[10];
+    private int i=0;
+
 
     private TableView<StudentModel> tableView = new TableView<>();
     private TableColumn column = new TableColumn();
@@ -65,17 +70,21 @@ public class myCourseTeacher implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        Connection Conn = ConnectionUtil.connectdb();
-
-        Statement stmt = null;
-        ResultSet rs = null;
         try {
-            stmt = Conn.createStatement();
-            rs = stmt.executeQuery("SELECT concat('(',c.classId, ') ', s.subjectName, ' - GV: ', l.lecturerName) FROM uetcourse.classes as c inner join uetcourse.Subjects as s inner join uetcourse.Lecturers as l where c.lecturerId = l.lecturerId and c.subjectId = s.subjectId;");
+            String stm = "SELECT concat('(',c.classId, ') ', s.subjectName, ' - GV: ', l.lecturerName) FROM uetcourse.classes as c inner join uetcourse.Subjects as s inner join uetcourse.Lecturers as l where c.lecturerId = l.lecturerId and c.subjectId = s.subjectId and l.lecturerId = ?";
+            ResultSet rs = null;
+            Connection conn = ConnectionUtil.connectdb();
+            PreparedStatement prepStatement = conn.prepareStatement(stm);
+            prepStatement.setString(1, Login.getUserID());
+
+            rs = prepStatement.executeQuery();
+
 
             while (rs.next()) {
-                String str1 = rs.getString(1);
-                items.add(str1);
+                strTea = rs.getString(1);
+                ListCoTea[i]=strTea;
+                i++;
+                items.add(strTea);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,6 +114,7 @@ public class myCourseTeacher implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/home/fxml/coursesView.fxml"));
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
+                stage.getIcons().add(new Image("/home/image/icon.png"));
                 stage.initModality(Modality.WINDOW_MODAL);
                 stage.setTitle(str);
                 stage.show();
@@ -116,6 +126,7 @@ public class myCourseTeacher implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/home/fxml/studentListView.fxml"));
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
+                stage.getIcons().add(new Image("/home/image/icon.png"));
                 stage.initModality(Modality.WINDOW_MODAL);
                 stage.setTitle("Student List" + str);
                 stage.show();
@@ -124,6 +135,7 @@ public class myCourseTeacher implements Initializable {
             GridPane grid = newCourse();
             Stage stage1 = new Stage();
             stage1.setScene(new Scene(grid,500,300));
+            stage1.getIcons().add(new Image("/home/image/icon.png"));
             Label headerLabel = new Label("Add New Course:");
             headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
             grid.add(headerLabel, 0,0,2,1);

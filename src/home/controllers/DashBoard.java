@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -68,20 +69,6 @@ public class DashBoard implements Initializable {
     @FXML
     WebView webView;
 
-    //su kien click chon chuc nang o nut home
-   /* @FXML
-    private void handleButtonClicks(javafx.event.ActionEvent mouseEvent)  {
-        if (mouseEvent.getSource() == btnMyhome) {
-            loadStage("/home/fxml/myhome.fxml");
-
-        } else if (mouseEvent.getSource() == btnMycourse) {
-            loadStage("/home/fxml/mycourse.fxml");
-        } else if (mouseEvent.getSource() == btn_Timetable) {
-            loadStage("/home/fxml/timetable.fxml");
-        }
-
-    }
-    */
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -101,6 +88,7 @@ public class DashBoard implements Initializable {
             stage.setScene(new Scene(root));
          //   Image icon = new Image(getClass().getResourceAsStream("/home/image/icon.PNG"));
           //  stage.getIcons().add(icon);
+            stage.getIcons().add(new Image("/home/image/icon.png"));
             stage.initModality(Modality.WINDOW_MODAL);
             stage.setTitle("UETConnect");
             stage.show();

@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -31,6 +32,15 @@ public class Mycourse implements Initializable {
     private Button viewCourse;
     @FXML
     private Button leaveCourse;
+    @FXML
+    private Label attended;
+
+    @FXML
+    private Label absent;
+
+    private int i=0;
+    public static String[] ListCo=new String[10];
+    private String str1="";
 
     private static String classID;
     private ObservableList<String> items = FXCollections.observableArrayList();
@@ -52,6 +62,9 @@ public class Mycourse implements Initializable {
                     "Inner join uetcourse.Lecturers as l on s1.subjectID = c.subjectID and l.lecturerId = c.lecturerId\n");
             while (rs.next()) {
                 String str1 = rs.getString(1);
+                str1 = rs.getString(1);
+                ListCo[i]=str1;
+                i++;
                 items.add(str1);
             }
         } catch (SQLException e) {
@@ -89,9 +102,11 @@ public class Mycourse implements Initializable {
                 e.getStackTrace();
             }
             PieChart.Data slice = new PieChart.Data("Attendance", attend);
-            PieChart.Data slice1 = new PieChart.Data("Absent", 13 - attend);
+            PieChart.Data slice1 = new PieChart.Data("Absent", 15 - attend);
             pie.getData().add(slice);
             pie.getData().add(slice1);
+            attended.setText("Attend: "+attend);
+            absent.setText("Absent: "+(15-attend));
             pie.setLegendSide(Side.BOTTOM);
             pie.setStartAngle(30);
             if(mouseEvent.getSource() == viewCourse){
@@ -99,6 +114,7 @@ public class Mycourse implements Initializable {
                     Parent root = FXMLLoader.load(getClass().getResource("/home/fxml/studentCourseView.fxml"));
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
+                    stage.getIcons().add(new Image("/home/image/icon.png"));
                     stage.initModality(Modality.WINDOW_MODAL);
                     stage.setTitle(item);
                     stage.show();

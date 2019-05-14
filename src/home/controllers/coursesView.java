@@ -143,7 +143,7 @@ public class coursesView implements Initializable {
                     }
                 }
             } else if (actionEvent.getSource() == txtBook){
-                studentCourseView.goLink(res);
+                studentCourseView.goLink("https://drive.google.com/drive/folders/1ITQgyB2FW-LHBO4EM2MaO9kyhFXkyVrh");
             } else {
                 Login.infoBox("Please select a class", null, "Error");
             }

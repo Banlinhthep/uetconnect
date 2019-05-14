@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.TeacherHome">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="1109.0" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.TeacherHome">
    <children>
       <Pane layoutX="291.0" layoutY="-2.0" prefHeight="129.0" prefWidth="842.0" style="-fx-background-color: #3a84c3;" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -40,7 +40,7 @@
                </graphic>
             </Button>
             <Button mnemonicParsing="false" />
-            <Button fx:id="myCourseBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicker" prefHeight="42.0" prefWidth="259.0" stylesheets="@../css/stylesheet.css" text="My Course">
+            <Button fx:id="myCourseBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicker" prefHeight="42.0" prefWidth="281.0" stylesheets="@../css/stylesheet.css" text="My Course">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,7 +52,7 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button fx:id="timeTableBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicker" prefHeight="42.0" prefWidth="259.0" stylesheets="@../css/stylesheet.css" text="Time Table ">
+            <Button fx:id="timeTableBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicker" prefHeight="42.0" prefWidth="322.0" stylesheets="@../css/stylesheet.css" text="Time Table ">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,7 +64,7 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button fx:id="signOutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicker" prefHeight="43.0" prefWidth="259.0" stylesheets="@../css/stylesheet.css" text="Sign Out">
+            <Button fx:id="signOutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicker" prefHeight="43.0" prefWidth="275.0" stylesheets="@../css/stylesheet.css" text="Sign Out">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>

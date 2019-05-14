@@ -90,8 +90,8 @@ public class studentCourseView implements Initializable {
                 PDFreader pdFreader = new PDFreader(file.getAbsolutePath());
             }
         } else if (actionEvent.getSource() == textbook) {
-            System.out.println(coursesView.getRes());
-            goLink(coursesView.getRes());
+
+            goLink("https://drive.google.com/drive/folders/1ITQgyB2FW-LHBO4EM2MaO9kyhFXkyVrh");
         } else if (actionEvent.getSource() == refreshBtn){
             tableView.refresh();
         } else {
